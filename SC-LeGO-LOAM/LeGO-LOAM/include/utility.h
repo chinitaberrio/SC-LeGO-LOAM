@@ -54,8 +54,8 @@ typedef pcl::PointXYZI  PointType;
 
 // extern const string pointCloudTopic = "/velodyne_points";
 // extern const string pointCloudTopic = "/kitti_scan";
-extern const string pointCloudTopic = "/os_cloud_node/points";
-extern const string imuTopic = "/ibeo_interface_node/xsens/IMU";
+extern const string pointCloudTopic = "/ouster/points";
+extern const string imuTopic = "/gps/imu"; // /imu/data_raw
 
 // Save pcd
 extern const string fileDirectory = "/tmp/";
@@ -134,8 +134,8 @@ extern const float surroundingKeyframeSearchRadius = 50.0; // key frame that is 
 extern const int   surroundingKeyframeSearchNum = 50; // submap size (when loop closure enabled)
 
 // history key frames (history submap for loop closure)
-extern const float historyKeyframeSearchRadius = 20.0; // NOT used in Scan Context-based loop detector / default 7.0; key frame that is within n meters from current pose will be considerd for loop closure
-extern const int   historyKeyframeSearchNum = 25; // 2n+1 number of history key frames will be fused into a submap for loop closure
+extern const float historyKeyframeSearchRadius = 30.0; // NOT used in Scan Context-based loop detector / default 7.0; key frame that is within n meters from current pose will be considerd for loop closure
+extern const int   historyKeyframeSearchNum = 35; // 2n+1 number of history key frames will be fused into a submap for loop closure
 extern const float historyKeyframeFitnessScore = 1.5; // default 0.3; the smaller the better alignment
 
 extern const float globalMapVisualizationSearchRadius = 1500.0; // key frames with in n meters will be visualized
