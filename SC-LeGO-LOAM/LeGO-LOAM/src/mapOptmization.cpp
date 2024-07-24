@@ -260,16 +260,16 @@ public:
         pubRegisteredCloud = nh.advertise<sensor_msgs::PointCloud2>("/registered_cloud", 2);
 
         float filter_size;
-        downSizeFilterCorner.setLeafSize(0.2, 0.2, 0.2);
+        downSizeFilterCorner.setLeafSize(0.5, 0.5, 0.5);
         filter_size = 0.5; downSizeFilterScancontext.setLeafSize(filter_size, filter_size, filter_size);
-        filter_size = 0.3; downSizeFilterSurf.setLeafSize(filter_size, filter_size, filter_size); // default 0.4;
-        downSizeFilterOutlier.setLeafSize(0.4, 0.4, 0.4);
+        filter_size = 0.5; downSizeFilterSurf.setLeafSize(filter_size, filter_size, filter_size); // default 0.4;
+        downSizeFilterOutlier.setLeafSize(0.5, 0.5, 0.5);
 
-        filter_size = 0.3; downSizeFilterHistoryKeyFrames.setLeafSize(filter_size, filter_size, filter_size); // default 0.4; for histor key frames of loop closure
+        filter_size = 0.5; downSizeFilterHistoryKeyFrames.setLeafSize(filter_size, filter_size, filter_size); // default 0.4; for histor key frames of loop closure
         filter_size = 1.0; downSizeFilterSurroundingKeyPoses.setLeafSize(filter_size, filter_size, filter_size); // default 1; for surrounding key poses of scan-to-map optimization
 
-        downSizeFilterGlobalMapKeyPoses.setLeafSize(1.0, 1.0, 1.0); // for global map visualization
-        downSizeFilterGlobalMapKeyFrames.setLeafSize(0.4, 0.4, 0.4); // for global map visualization
+        downSizeFilterGlobalMapKeyPoses.setLeafSize(2.0, 2.0, 2.0); // for global map visualization
+        downSizeFilterGlobalMapKeyFrames.setLeafSize(0.5, 0.5, 0.5); // for global map visualization
 
         odomAftMapped.header.frame_id = "/camera_init";
         odomAftMapped.child_frame_id = "/aft_mapped";

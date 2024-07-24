@@ -54,7 +54,7 @@ typedef pcl::PointXYZI  PointType;
 
 // extern const string pointCloudTopic = "/velodyne_points";
 // extern const string pointCloudTopic = "/kitti_scan";
-extern const string pointCloudTopic = "/ouster/points";
+extern const string pointCloudTopic = "/ouster/points";//"{/ouster/points";
 extern const string imuTopic = "/gps/imu"; // /imu/data_raw
 
 // Save pcd
@@ -106,12 +106,12 @@ extern const bool useCloudRing = false; // if true, ang_res_y and ang_bottom are
 //extern const int groundScanInd = 15;
 
 // Ouster OS1-128
-extern const int N_SCAN = 128
+extern const int N_SCAN = 128;
 extern const int Horizon_SCAN = 1024;
 extern const float ang_res_x = 360.0/float(Horizon_SCAN);
 extern const float ang_res_y = 45/float(N_SCAN-1);
 extern const float ang_bottom = 22.5;
-extern const int groundScanInd = 9;
+extern const int groundScanInd = 50;
 
 
 extern const bool loopClosureEnableFlag = true;
@@ -139,8 +139,8 @@ extern const float nearestFeatureSearchSqDist = 25;
 
 
 // Mapping Params
-extern const float surroundingKeyframeSearchRadius = 50.0; // key frame that is within n meters from current pose will be considerd for scan-to-map optimization (when loop closure disabled)
-extern const int   surroundingKeyframeSearchNum = 50; // submap size (when loop closure enabled)
+extern const float surroundingKeyframeSearchRadius = 80.0; // key frame that is within n meters from current pose will be considerd for scan-to-map optimization (when loop closure disabled)
+extern const int   surroundingKeyframeSearchNum = 80; // submap size (when loop closure enabled)
 
 // history key frames (history submap for loop closure)
 extern const float historyKeyframeSearchRadius = 30.0; // NOT used in Scan Context-based loop detector / default 7.0; key frame that is within n meters from current pose will be considerd for loop closure
